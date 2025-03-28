@@ -1,5 +1,7 @@
 package com.swastik.service.productcatalog.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,15 +18,17 @@ import com.swastik.service.productcatalog.service.ProductService;
 @RequestMapping("/api")
 public class ProductController {
 
+	private static final Logger log = LoggerFactory.getLogger(ProductController.class);
+			
 	@Autowired
 	ProductService productService;
 	
 	@PostMapping(value = "/{version}/products")
 	public ResponseEntity<?> createNewProduct(@PathVariable("version") String version, @RequestBody ProductRequestDto request){
-		System.out.println("Entered into createNewProduct");
+		log.info("Entered in method-createNewProduct of class-ProductController");
 		String response = productService.createNewProduct(request);
 		return ResponseEntity.ok("Add a New Product");
 	}
-	
+	 
 	
 }

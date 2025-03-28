@@ -4,7 +4,7 @@ import com.swastik.service.productcatalog.dto.ProductRequestDto;
 
 public interface ProductService {
 	
-	String createNewProduct(ProductRequestDto request);
+	public String createNewProduct(ProductRequestDto request);
 	
 	
 
