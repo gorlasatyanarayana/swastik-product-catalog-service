@@ -22,7 +22,7 @@ import lombok.Setter;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(schema = "swastikdb", name = "product_catelogue")
+@Table(schema = "swastikproduct", name = "product_catelogue")
 public class ProductCatelogueEntity implements Serializable{
 	
 	/**
@@ -54,13 +54,13 @@ public class ProductCatelogueEntity implements Serializable{
 	private LocalDateTime createdAt;
 	
 	@Column(name = "created_by")
-	private String created_by;
+	private String createdBy;
 	
 	@Column(name = "updated_at")
 	private LocalDateTime updatedAt;
 	
 	@Column(name = "updated_by")
-	private String updated_by;	
+	private String updatedBy;	
 	
 	
 

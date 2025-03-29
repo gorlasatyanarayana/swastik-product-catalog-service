@@ -38,7 +38,7 @@ public class ProductServiceImpl implements ProductService{
 		productCatelogueEntity.setDescription(request.getDescription());
 		productCatelogueEntity.setStock(request.getStock());
 		
-		productCatelogueEntity.setCreated_by("Product Service");
+		productCatelogueEntity.setCreatedBy("Product Service");
 		productCatelogueEntity.setCreatedAt(LocalDateTime.now());	
 		productCatelogueEntity = productCatelogueRepository.save(productCatelogueEntity);
 		
