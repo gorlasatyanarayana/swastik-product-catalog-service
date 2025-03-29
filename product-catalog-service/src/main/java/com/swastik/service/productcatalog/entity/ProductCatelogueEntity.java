@@ -1,22 +1,39 @@
 package com.swastik.service.productcatalog.entity;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 
+@Setter
+@Getter
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(schema = "swastikdb", name = "product_catelogue")
-public class ProductCatelogueEntity {
+public class ProductCatelogueEntity implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4132095523482914767L;
+
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", unique = true,  nullable = false)
-	private BigInteger id;
+	private UUID id;
 	
 	@Column(name = "name")
 	private String name;
@@ -31,7 +48,7 @@ public class ProductCatelogueEntity {
 	private String category;
 	
 	@Column(name = "stock")
-	private BigInteger stock;
+	private int stock;
 	
 	@Column(name = "created_at")
 	private LocalDateTime createdAt;
@@ -43,89 +60,7 @@ public class ProductCatelogueEntity {
 	private LocalDateTime updatedAt;
 	
 	@Column(name = "updated_by")
-	private String updated_by;
-
-	public BigInteger getId() {
-		return id;
-	}
-
-	public void setId(BigInteger id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public BigDecimal getPrice() {
-		return price;
-	}
-
-	public void setPrice(BigDecimal price) {
-		this.price = price;
-	}
-
-	public String getCategory() {
-		return category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
-	}
-
-	public BigInteger getStock() {
-		return stock;
-	}
-
-	public void setStock(BigInteger stock) {
-		this.stock = stock;
-	}
-
-	public LocalDateTime getCreatedAt() {
-		return createdAt;
-	}
-
-	public void setCreatedAt(LocalDateTime createdAt) {
-		this.createdAt = createdAt;
-	}
-
-	public String getCreated_by() {
-		return created_by;
-	}
-
-	public void setCreated_by(String created_by) {
-		this.created_by = created_by;
-	}
-
-	public LocalDateTime getUpdatedAt() {
-		return updatedAt;
-	}
-
-	public void setUpdatedAt(LocalDateTime updatedAt) {
-		this.updatedAt = updatedAt;
-	}
-
-	public String getUpdated_by() {
-		return updated_by;
-	}
-
-	public void setUpdated_by(String updated_by) {
-		this.updated_by = updated_by;
-	}
-	
-	
+	private String updated_by;	
 	
 	
 
