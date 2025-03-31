@@ -1,7 +1,5 @@
 package com.swastik.service.productcatalog.dto;
 
-import java.util.List;
-
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,8 +7,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
-public class BaseResponse {
-	private boolean success;
-	private List<CustomError> errors;
-
+public class CustomError {
+	private String code;
+	private String message;
+	private String type;
 }

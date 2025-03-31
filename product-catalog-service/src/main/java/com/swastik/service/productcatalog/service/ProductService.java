@@ -7,8 +7,7 @@ import com.swastik.service.productcatalog.dto.ProductResponse;
 public interface ProductService {
 	
 	ProductResponse createNewProduct(ProductRequestDto request);
-	ProductListResponse getAllProducts();
-	
+	ProductListResponse getAllProducts();	
 	
 	
 

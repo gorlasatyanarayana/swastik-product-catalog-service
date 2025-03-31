@@ -17,5 +17,6 @@ public class ProductListResponse {
 	
 	private List<Product> productList;
 	private boolean success;
+	private List<CustomError> errors;
 
 }
